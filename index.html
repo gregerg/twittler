@@ -27,7 +27,7 @@
           var displayed = total;
           var index = streams.home.length - 1;
           total = index;
-          while(index >= displayed) {
+          while(index > displayed) {
             var tweet = streams.home[index];
             var $tweet = $('<div></div>');
             $tweet.text('@' + tweet.user + ': ' + tweet.message);
