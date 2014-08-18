@@ -12,14 +12,18 @@
       $(document).ready(function(){
         var $body = $('body');
         //$body.html('');
+        
+        function displayTweet(tweet) {
+          var $tweet = $('<div></div>');
+          $tweet.text('@' + tweet.user + ': ' + tweet.message);
+          $tweet.appendTo($body);
+        }
 
         var index = streams.home.length - 1;
         var total = index;
         while(index >= 0){
           var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
+          displayTweet(tweet);
           index -= 1;
         }
 
@@ -29,9 +33,7 @@
           total = index;
           while(index > displayed) {
             var tweet = streams.home[index];
-            var $tweet = $('<div></div>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message);
-            $tweet.appendTo($body);
+            displayTweet(tweet);
             index -= 1;
           }
         });
