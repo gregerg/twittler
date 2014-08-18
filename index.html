@@ -15,7 +15,7 @@
         
         function displayTweet(tweet) {
           var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
+          $tweet.text('@' + tweet.user + ': ' + tweet.message + ' tweeted at: ' + tweet.created_at);
           $tweet.appendTo($body);
         }
 
