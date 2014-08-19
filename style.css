@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif,Arial;
   font-size: 14px;
+  background-color: rgb(113, 166, 201);
 }
 
 h1 {
@@ -9,6 +10,7 @@ h1 {
 .tweet {
   padding: 13px 15px;
   border: 1px solid #e1e8ed;
+  background-color: white;
 }
 
 .date {
