@@ -16,7 +16,11 @@
         
         function displayTweet(tweet) {
           var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message + ' tweeted at: ' + tweet.created_at);
+          var $userLink = $('<a href="#"></a>');
+          $userLink.text(tweet.user);
+          $userLink.attr('href', '#'+tweet.user);
+          userHTML = $userLink.clone().wrap('<p>').parent().html();
+          $tweet.html('@' + userHTML + ': ' + tweet.message + ' tweeted at: ' + tweet.created_at);
           $tweet.appendTo($body);
         }
         
