@@ -1,5 +1,17 @@
 body {
+  font-family: sans-serif,Arial;
+  font-size: 14px;
 }
 
 h1 {
+}
+
+.tweet {
+  padding: 13px 15px;
+  border: 1px solid #e1e8ed;
+}
+
+.date {
+  font-size: 12px;
+  color: #bababa;
 }

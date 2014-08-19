@@ -16,12 +16,18 @@
         //$body.html('');
         
         function displayTweet(tweet) {
-          var $tweet = $('<div></div>');
+          var $tweet = $('<div class="tweet"></div>');
+          
           var $userLink = $('<a href="#"></a>');
           $userLink.text(tweet.user);
           $userLink.attr('href', '#'+tweet.user);
-          userHTML = $userLink.clone().wrap('<p>').parent().html();
-          $tweet.html('@' + userHTML + ': ' + tweet.message + ' tweeted at: ' + tweet.created_at);
+          var userHTML = $userLink.clone().wrap('<p>').parent().html();
+          
+          var $dateSpan = $('<span class="date"></span>');
+          $dateSpan.text('tweeted at: ' + tweet.created_at);
+          var dateHTML = $dateSpan.clone().wrap('<p>').parent().html();
+          
+          $tweet.html('@' + userHTML + ': ' + tweet.message + ' ' + dateHTML);
           $tweet.appendTo($body);
         }
         
