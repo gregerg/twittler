@@ -3,52 +3,14 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <script src="twittler.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Tweets!<h1>
+  <div id="container">
+    <h1 id="title">Twittler</h1>
     <button type="button" id="newTweets">New Tweets</button>
-    <script>
-
-      $(document).ready(function(){
-        var $body = $('body');
-        var displayed = -1;
-        //$body.html('');
-        
-        function displayTweet(tweet) {
-          var $tweet = $('<div class="tweet"></div>');
-          
-          var $userLink = $('<a href="#"></a>');
-          $userLink.text(tweet.user);
-          $userLink.attr('href', '#'+tweet.user);
-          var userHTML = $userLink.clone().wrap('<p>').parent().html();
-          
-          var $dateSpan = $('<span class="date"></span>');
-          $dateSpan.text('tweeted at: ' + tweet.created_at);
-          var dateHTML = $dateSpan.clone().wrap('<p>').parent().html();
-          
-          $tweet.html('@' + userHTML + ': ' + tweet.message + ' ' + dateHTML);
-          $tweet.appendTo($body);
-        }
-        
-        function displayTweets() {
-          var index = streams.home.length - 1;
-          var total = index;
-          while(index > displayed){
-            var tweet = streams.home[index];
-            displayTweet(tweet);
-            index -= 1;
-          }
-          displayed = total;
-        }
-
-        displayTweets();
-
-        $('#newTweets').on('click', function() {
-          displayTweets();
-        });
-      });
-
-    </script>
+    <div id="tweets"></div>
+  </div>
   </body>
 </html>
